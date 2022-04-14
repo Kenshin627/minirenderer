@@ -7,7 +7,7 @@ void line(Vec2i t0, Vec2i t1, TGAImage& image, TGAColor color);
 
 void scanLine_triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage& image, TGAColor color);
 
-void triangle(Vec3f points[3], TGAImage &image, TGAColor color, float *zbuffer);
+void triangle(Vec3f points[3], TGAImage &image, float n1, float n2, float n3, float *zbuffer);
 
 Vec3f barycentric(Vec3f pts[3], Vec3f p);
 
@@ -138,19 +138,22 @@ int main(int argc, char** argv) {
         std::vector<int> face = model->face(i);
         Vec3f screen_coords[3];
         Vec3f world_coords[3];
+        float intensity[3];
         for (int j = 0; j < 3; j++)
         {
             Vec3f v = model->vert(face[j]);
             screen_coords[j] = Vec3f((v.x + 1.) * width / 2., (v.y + 1.) * height / 2., v.z);
             world_coords[j] = v;
+            intensity[j] = model->norm(i, j) * light_dir;
         }
 
         Vec3f n = (world_coords[2] - world_coords[0]) ^ (world_coords[1] - world_coords[0]);
         n.normalize();
-        float intensity = n * light_dir;
+        //float intensity = n * light_dir;
+        
         if (intensity > 0)
         {
-            triangle(screen_coords, image, TGAColor(intensity * 255, intensity * 255, intensity * 255, 255), zbuffer);
+            triangle(screen_coords, image, intensity[0], intensity[1], intensity[2], zbuffer);
         }
 
     }
@@ -253,7 +256,7 @@ void scanLine_triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage& image, TGAColor c
 
 }
 
-void triangle(Vec3f points[3], TGAImage &image, TGAColor color, float *zbuffer) {
+void triangle(Vec3f points[3], TGAImage &image, float n1, float n2, float n3, float *zbuffer) {
     Vec2f bboxmin(image.get_width() - 1, image.get_height() - 1);
     Vec2f bboxmax(0, 0);
     Vec2f clamp(image.get_width() - 1, image.get_height() - 1);
@@ -283,10 +286,11 @@ void triangle(Vec3f points[3], TGAImage &image, TGAColor color, float *zbuffer) 
             p.z += points[0].z * _bartcentric.x;
             p.z += points[1].z * _bartcentric.y;
             p.z += points[2].z * _bartcentric.z;
+            float intensity = _bartcentric.x * n1 + _bartcentric.y * n2 + _bartcentric.z * n3;
             if (zbuffer[int(p.x+p.y*width)] < p.z)
             {
                 zbuffer[int(p.x + p.y * width)] = p.z;
-                image.set(p.x, p.y, color);
+                image.set(p.x, p.y, TGAColor(intensity*255, intensity*255, intensity*255,255));
             }
         }
     }

@@ -1,1 +1,2 @@
 D:\code\minirenderer2\Debug\minirenderer2.exe
+E:\develop\minirenderer\Debug\minirenderer2.exe
