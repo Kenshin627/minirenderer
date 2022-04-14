@@ -1,0 +1,79 @@
+﻿  main.cpp
+D:\code\minirenderer2\main.cpp(144,83): warning C4244: “参数”: 从“double”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(144,57): warning C4244: “参数”: 从“double”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(153,97): warning C4244: “参数”: 从“float”转换到“unsigned char”，可能丢失数据
+D:\code\minirenderer2\main.cpp(153,80): warning C4244: “参数”: 从“float”转换到“unsigned char”，可能丢失数据
+D:\code\minirenderer2\main.cpp(153,63): warning C4244: “参数”: 从“float”转换到“unsigned char”，可能丢失数据
+D:\code\minirenderer2\main.cpp(257,61): warning C4244: “参数”: 从“int”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(257,37): warning C4244: “参数”: 从“int”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(259,59): warning C4244: “参数”: 从“int”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(259,35): warning C4244: “参数”: 从“int”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(270,16): warning C4244: “初始化”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(272,20): warning C4244: “初始化”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(275,19): warning C4244: “=”: 从“int”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(276,19): warning C4244: “=”: 从“int”转换到“t”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(289,33): warning C4244: “参数”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(289,28): warning C4244: “参数”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+D:\code\minirenderer2\main.cpp(309,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\code\minirenderer2\geometry.h(18,75): warning C4244: “参数”: 从“float”转换到“t”，可能丢失数据
+          with
+          [
+              t=int
+          ]
+D:\code\minirenderer2\geometry.h(18): message : 在编译 类 模板 成员函数“Vec2<int> Vec2<int>::operator *(float) const”时
+D:\code\minirenderer2\main.cpp(226): message : 查看对正在编译的函数 模板 实例化“Vec2<int> Vec2<int>::operator *(float) const”的引用
+D:\code\minirenderer2\main.cpp(166): message : 查看对正在编译的 类 模板 实例化“Vec2<int>”的引用
+D:\code\minirenderer2\geometry.h(18,70): warning C4244: “参数”: 从“float”转换到“t”，可能丢失数据
+          with
+          [
+              t=int
+          ]
+  minirenderer2.vcxproj -> D:\code\minirenderer2\Debug\minirenderer2.exe
